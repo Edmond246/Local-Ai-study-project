@@ -1,0 +1,14 @@
+# Python virtual environment
+.venv/
+__pycache__/
+*.pyc
+
+# Environment variables (never upload this!)
+.env
+
+# macOS/Windows junk
+.DS_Store
+Thumbs.db
+
+# Temporary files
+temp_deck.apkg

@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Local AI Study Tool</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div class="container">
+        <header>
+            <h1>🧠 Local AI Study Tool</h1>
+            <p>Paste your notes or upload a PDF to generate flashcards.</p>
+        </header>
+
+        <!-- Input Section -->
+        <section id="input-section" class="card">
+            <textarea id="text-input" placeholder="Paste your text here (max ~30k characters)..."></textarea>
+            
+            <div class="controls">
+                <div class="file-upload">
+                    <label for="file-input" class="btn-secondary">📄 Upload .txt or .pdf</label>
+                    <input type="file" id="file-input" accept=".txt,.pdf" hidden>
+                    <span id="file-name">No file selected</span>
+                </div>
+                <button id="generate-btn" class="btn-primary">Generate Flashcards</button>
+            </div>
+            
+            <div id="error-banner" class="error-banner hidden"></div>
+        </section>
+
+        <!-- Progress Section -->
+        <section id="progress-section" class="card hidden">
+            <h3>Generating Flashcards...</h3>
+            <div class="progress-bar-container">
+                <div id="progress-bar" class="progress-bar"></div>
+            </div>
+            <p id="progress-text">Initializing...</p>
+        </section>
+
+        <!-- Output Section -->
+        <section id="output-section" class="hidden">
+            <div class="output-header">
+                <h2>Your Flashcards</h2>
+                <div class="export-buttons">
+                    <button id="export-csv-btn" class="btn-secondary">Export CSV</button>
+                    <button id="export-anki-btn" class="btn-secondary">Export Anki</button>
+                </div>
+            </div>
+            
+            <div id="warnings-container" class="warnings hidden"></div>
+            
+            <div id="flashcard-grid" class="flashcard-grid">
+                <!-- Cards will be injected here by JS -->
+            </div>
+        </section>
+    </div>
+
+    <script src="app.js"></script>
+</body>
+</html>
